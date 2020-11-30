@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import Hospitalform
+from .models import Hospital
 # Create your views here.
 
 def index(request):
@@ -9,7 +10,8 @@ def index(request):
 
 def hospitais(request):
     #return HttpResponse("<h1>Aqui é area Hospital<h1>")
-    return render(request, "hospitais/hospitais.html")
+    hospitais = Hospital.objects.all()
+    return render(request, "hospitais/hospitais.html",{'hospitais':hospitais})
 
 def criar_hospital(request):
     form = Hospitalform(request.POST)
