@@ -15,15 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-<<<<<<< HEAD
 from hospapp.views import index, hospital 
-=======
 from django.conf.urls.static import static
 from django.conf.urls import url
 from django.views.static import serve
 from django.conf import settings
 from hospapp.views import index, hospitais, criar_hospital, editar, deletar
->>>>>>> Dados
 
 urlpatterns = [
     path('admin/', admin.site.urls),  
