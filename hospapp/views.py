@@ -7,4 +7,5 @@ def index(request):
     return render(request, 'hospitais/index.html')
 
 def hospitais(request):
-    return HttpResponse("<h1>Aqui é area Hospital<h1>")
+    #return HttpResponse("<h1>Aqui é area Hospital<h1>")
+    return render(request, "hospitais/hospitais.html")
