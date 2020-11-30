@@ -5,7 +5,7 @@ from PIL import Image
 class Hospital (models.Model):
 
 	nome_hospital = models.CharField(max_length=200)
-	foto = models.ImageField(null=True, blank=200)
+	foto = models.ImageField(upload_to='img', null=True, blank=200)
 	desc_hospital = models.CharField(max_length=200)
 	tipo_hospital = models.CharField(max_length=200)
 	conceito_hospital = models.CharField(max_length=200)
