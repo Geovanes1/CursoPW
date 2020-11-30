@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hospapp.views import index, hospital
+from hospapp.views import index, hospital 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
