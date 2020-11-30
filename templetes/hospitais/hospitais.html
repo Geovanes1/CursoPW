@@ -23,7 +23,7 @@
 				<td>{{hospital.desc_hospital}}</td>
 				<td>{{hospital.tipo_hospital}}</td>
 				<td>{{hospital.conceito_hospital}}</td>	
-				<td><a href="#" class="btn btn-warning">Editar</a></td>
+				<td><a href="{% url 'editar' hospital.id %}" class="btn btn-warning">Editar</a></td>
 				<td><a href="#" class="btn btn-danger">Excluir</a></td>
 			</tr>
 			{% endfor %}
