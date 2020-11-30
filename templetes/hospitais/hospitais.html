@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<div>
-	<table>
+<div class="container">
+	<table class="table">
 		<thead>
 			<tr>
 				<th>Nome Hospital</th>
@@ -19,10 +19,12 @@
 			{% for hospital in hospitais %}
 			<tr>
 				<td>{{hospital.nome_hospital}}</td>
-				<td><img src="{{hospital.foto_url}}" alt=""></td>
+				<td><img src="{{hospital.foto_url}}" alt="" class="img-fluid img-thumbnail"></td>
 				<td>{{hospital.desc_hospital}}</td>
 				<td>{{hospital.tipo_hospital}}</td>
-				<td>{{hospital.conceito_hospital}}</td>				
+				<td>{{hospital.conceito_hospital}}</td>	
+				<td><a href="#" class="btn btn-warning">Editar</a></td>
+				<td><a href="#" class="btn btn-danger">Excluir</a></td>
 			</tr>
 			{% endfor %}
 		</tbody>

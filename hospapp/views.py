@@ -11,6 +11,9 @@ def index(request):
 def hospitais(request):
     #return HttpResponse("<h1>Aqui é area Hospital<h1>")
     hospitais = Hospital.objects.all()
+    busca = request.GET.get('search')
+    if busca:
+        hospitais = Hospital.objects.filter(nome_hospital__icontains =busca)
     return render(request, "hospitais/hospitais.html",{'hospitais':hospitais})
 
 def criar_hospital(request):
