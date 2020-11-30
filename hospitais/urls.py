@@ -22,7 +22,7 @@ from django.conf import settings
 from hospapp.views import index, hospitais, criar_hospital, editar, deletar
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),  
     path('index/', index),
     path('hospitais/', hospitais, name='hospitais'),
     path('criar_hospital/', criar_hospital),
