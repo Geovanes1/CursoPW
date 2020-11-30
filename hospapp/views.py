@@ -13,4 +13,8 @@ def hospitais(request):
 
 def criar_hospital(request):
     form = Hospitalform(request.POST)
+    if form.is_valid():
+             hosp = form.save()
+             hosp.save()
+             form = Hospitalform()
     return render(request, 'hospitais/criar_hospitais.html',{'form':form})
