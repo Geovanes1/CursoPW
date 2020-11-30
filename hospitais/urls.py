@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from django.views.static import serve
 from django.conf import settings
-from hospapp.views import index, hospitais, criar_hospital, editar
+from hospapp.views import index, hospitais, criar_hospital, editar, deletar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +27,7 @@ urlpatterns = [
     path('hospitais/', hospitais, name='hospitais'),
     path('criar_hospital/', criar_hospital),
     path('editar/<int:id>', editar, name='editar'),
+    path('deletar/<int:id>', deletar, name='deletar'),
     url(r'^img/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}) 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

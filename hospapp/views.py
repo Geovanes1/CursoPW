@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .forms import Hospitalform
 from .models import Hospital
 from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect
+
 # Create your views here.
 
 def index(request):
@@ -46,3 +48,10 @@ def criar_hospital(request):
     		hosp.save()
     		form=Hospitalform()
     return render(request, 'hospitais/criar_hospitais.html',{'form':form})
+
+def deletar(request, id):
+    hosp = get_object_or_404(Hospital,pk=id)
+    if request.method == "POST":
+        hosp.delete()
+        return redirect('hospitais')
+    return render(request,'hospitais/deletar_hospital.html', {'hosp':hosp})
