@@ -30,7 +30,6 @@ def editar(request, id):
         if form.is_valid():
            form.save()
            save()
-
            return redirect('hospitais')
 
         else:
