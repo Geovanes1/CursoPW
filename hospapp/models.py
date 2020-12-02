@@ -15,7 +15,7 @@ class Hospital (models.Model):
 		super().save(*args, **kwargs)
 
 		im = Image.open(self.foto.path)
-		novo_tamanho = (100,100)
+		novo_tamanho = (250,250)
 		im.thumbnail(novo_tamanho)
 		im.save(self.foto.path)
 

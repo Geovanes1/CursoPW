@@ -1,9 +1,14 @@
 {% extends "hospitais/base.html" %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
-{% csrf_token %}
-{{ form.as_p}}
+<div class="container col-lg-4">
+	<form action="." method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form | crispy }}	
+		<input type="submit" value="Enviar" class="input-group btn btn-success">
+	</form>
+</div>
 
 {% endblock content %}
 
