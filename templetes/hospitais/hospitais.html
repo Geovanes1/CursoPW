@@ -11,8 +11,10 @@
 				<th>Descrição</th>
 				<th>Tipo Hospital</th>
 				<th>Conceito Hospital</th>
+				{% if user.is_authenticated%}
 				<th>Editar</th>
 				<th>Excluir</th>
+				{% endif%}
 			</tr>
 		</thead>
 		<tbody>
@@ -22,9 +24,11 @@
 				<td><img src="{{hospital.foto_url}}" alt="" class="img-fluid img-thumbnail"></td>
 				<td>{{hospital.desc_hospital}}</td>
 				<td>{{hospital.tipo_hospital}}</td>
-				<td>{{hospital.conceito_hospital}}</td>	
+				<td>{{hospital.conceito_hospital}}</td>
+				{% if user.is_authenticated%}
 				<td><a href="{% url 'editar' hospital.id %}" class="btn btn-warning">Editar</a></td>
 				<td><a href="{% url 'deletar' hospital.id %}" class="btn btn-danger">Excluir</a></td>
+				{% endif%}
 			</tr>
 			{% endfor %}
 		</tbody>

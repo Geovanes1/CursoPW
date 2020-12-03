@@ -1,6 +1,9 @@
 {% extends "hospitais/base.html" %}
 {% load crispy_forms_tags %}
+
 {% block content %}
+
+{% if user.is_authenticated%}
 
 <div class="container col-lg-4 mb-5">
 	<form action="." method="POST" enctype="multipart/form-data">
@@ -9,6 +12,7 @@
 		<input type="submit" value="Enviar" class="input-group btn btn-success input-group md-5">
 	</form>
 </div>
+{% endif%}
 
 {% endblock content %}
 
