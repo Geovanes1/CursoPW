@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="/static/css/estilo.css">
 	
 	<title>Hospitalar</title>
@@ -20,25 +21,28 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 				<ul class="navbar-nav ml-auto mr-auto">
-					<li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
-					<li><a href="{% url 'hospitais' %}" class="nav-link">Hospitais</a></li>
-					<li><a href="{% url 'hospitais' %}" class="nav-link">Tipos de Hospitais</a></li>
+
+					<li><a href="{% url 'index' %}" class="nav-link"><i class="material-icons align-middle">account_balance</i>Home</a></li>
+
+					<li><a href="{% url 'hospitais' %}" class="nav-link"><i class="material-icons align-middle">camera_enhance</i>Hospitais</a></li>
+
+					<li><a href="{% url 'hospitais' %}" class="nav-link"><i class="material-icons align-middle">chrome_reader_mode</i>Tipos de Hospitais</a></li>
 
 					<!--Colocando um SubMenu-->
 
 					<li class="dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Gerenciar Hospitais</a>
-						<ul class="dropdown-menu">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="material-icons align-middle">dns</i>Gerenciar Hospitais</a>
+						<ul class="dropdown-menu bg-dark">
 							<li>
-								<a href="{% url 'criar_hospital' %}" class="dropdown-item">Inserir Hospitais</a>
+								<a href="{% url 'criar_hospital' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-success">cached</i>Inserir Hospitais</a>
 							</li>
 							<div class="dropdown-divider"></div>
 							<li>
-								<a href="{% url 'hospitais' %}" class="dropdown-item">Editar Hospitais</a>
+								<a href="{% url 'hospitais' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-warning">cached</i>Editar Hospitais</a>
 							</li>
 							<div class="dropdown-divider"></div>
 							<li>
-								<a href="{% url 'hospitais' %}" class="dropdown-item">Excluir Hospitais</a>							
+								<a href="{% url 'hospitais' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-danger">cached</i>Excluir Hospitais</a>							
 							</li>
 						</ul>
 					</li>
@@ -50,18 +54,18 @@
 
 				<ul class="navbar-nav">
 					<li class="dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Usuarios</a>
-						<ul class="dropdown-menu">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="material-icons align-middle">assignment_ind</i>Usuarios</a>
+						<ul class="dropdown-menu bg-dark">
 							<li>
-								<a href="{% url 'criar_usuario' %}" class="dropdown-item">Criar Usuarios</a>
+								<a href="{% url 'criar_usuario' %}" class="dropdown-item text-light"><i class="material-icons align-middle">assignment_ind</i>Criar Usuarios</a>
 							</li>
 							<div class="dropdown-divider"></div>
 							<li>
-								<a href="{% url 'login' %}" class="dropdown-item">Logar</a>
+								<a href="{% url 'login' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-success">assignment_ind</i>Logar</a>
 							</li>
 							<div class="dropdown-divider"></div>
 							<li>
-								<a href="{% url 'logout' %}" class="dropdown-item">Sair</a>							
+								<a href="{% url 'logout' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-danger">assignment_ind</i>Sair</a>							
 							</li>
 						</ul>
 					</li>
