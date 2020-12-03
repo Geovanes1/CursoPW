@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),  
     path('index/', index, name='index'),
     path('hospitais/', hospitais, name='hospitais'),
-    path('criar_hospital/', criar_hospital),
+    path('criar_hospital/', criar_hospital, name='criar_hospital'),
     path('editar/<int:id>', editar, name='editar'),
     path('deletar/<int:id>', deletar, name='deletar'),
     path('', include('usuarios.urls')),
