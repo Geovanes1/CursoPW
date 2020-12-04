@@ -3,16 +3,24 @@
 
 {% block content %}
 
-{% if user.is_authenticated%}
+{% if user.is_authenticated %}
 
-<div class="container col-lg-4 mb-5">
+<div class="container col-lg-4 mb-5 pb-5">
+	{% for msg in messages %}
+	<div class="alert {{msg.tgas}} alert-success">
+		<button class="close" data-dismiss="alert" role="alert">
+			<span aria-hiddem="true">&times;</span>
+		</button>
+		{{msg}}
+	</div>
+	{% endfor %}
 	<form action="." method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{ form | crispy }}	
-		<input type="submit" value="Enviar" class="input-group btn btn-success input-group md-5">
+		<input type="submit" value="Enviar" class="input-group btn btn-success input-group md-5 pb-md-2">
 	</form>
 </div>
-{% endif%}
+{% endif %}
 
 {% endblock content %}
 
