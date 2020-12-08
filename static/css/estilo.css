@@ -1,5 +1,5 @@
 .jumbotron{
-	background-image: url('V:/Curso FIC/hospitalar/imghosp/hospaz.jpg');
+	background-image: url('/static/icons/hospaz.jpg');
 	background-size: cover;
 	background-position: center;
 }
@@ -29,23 +29,23 @@ button{
 	margin-left: 0.5rem;
 }
 
-.icones a[href='https://github.com/']{
-	background-image: url('V:/Curso FIC/hospitalar/img/github.png');
+.icones a[href='V:/psw/static/icons/github.svg']{
+	background-image: url('V:/psw/static/icons/github.svg');
 	background-size: 36px 36px;
 }
 
 .icones a[href='https://myaccount.google.com/']{
-	background-image: url('V:/Curso FIC/hospitalar/img/gp.png');
+	background-image: url('V:/psw/static/icons/google-plus.svg');
 	background-size: 36px 36px;
 }
 
 .icones a[href='https://br.linkedin.com/']{
-	background-image: url('V:/Curso FIC/hospitalar/img/link.png');
+	background-image: url('V:/psw/static/icons/linkedin.svg');
 	background-size: 36px 36px;
 }
 
 .icones a[href='https://www.facebook.com/']{
-	background-image: url('V:/Curso FIC/hospitalar/img/face.png');
+	background-image: url('V:/psw/static/icons/facebook.svg');
 	background-size: 36px 36px;
 }
 

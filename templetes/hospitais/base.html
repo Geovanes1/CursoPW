@@ -5,9 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/static/css/bootstrap.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="/static/css/estilo.css">
-	
+	<link rel="stylesheet" href="/static/css/estilo.css">	
 	<title>Hospitalar</title>
+	<link rel="icon" href="/static/icons/hospital.svg"/>
+	<style>
+		.jumbotron{
+			background-image: url('/static/icons/hospaz.jpg');
+			background-size: cover;
+			background-position: center;
+		}
+	</style>
 </head>
 <body>
 	<!--Inicio do Menu-->
@@ -51,6 +58,35 @@
 				</ul>
 
 				<!--Menu_Usuario-->
+				{% if user.is_authenticated %}
+
+				<ul class="navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="material-icons align-middle">assignment_ind</i>{{ user }}</a>
+						<ul class="dropdown-menu bg-dark">
+							<li>
+								<a href="{% url 'criar_usuario' %}" class="dropdown-item text-light"><i class="material-icons align-middle">assignment_ind</i>Criar Usuarios</a>
+							</li>
+							<!-- <div class="dropdown-divider"></div>
+							<li>
+								<a href="{% url 'login' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-success">assignment_ind</i>Logar</a>
+							</li> -->
+							<div class="dropdown-divider"></div>
+							<li>
+								<a href="{% url 'logout' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-danger">assignment_ind</i>Sair</a>							
+							</li>
+						</ul>
+					</li>
+
+					<!-- Finalizando o SubMenu -->
+				</ul>
+
+				{% endif %}
+
+
+
+
+				{% if not user.is_authenticated %}
 
 				<ul class="navbar-nav">
 					<li class="dropdown">
@@ -63,26 +99,27 @@
 							<li>
 								<a href="{% url 'login' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-success">assignment_ind</i>Logar</a>
 							</li>
-							<div class="dropdown-divider"></div>
-							<li>
-								<a href="{% url 'logout' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-danger">assignment_ind</i>Sair</a>							
-							</li>
+							<!-- <div class="dropdown-divider"></div> -->
+							
 						</ul>
 					</li>
 
 					<!-- Finalizando o SubMenu -->
 				</ul>
+
+				{% endif %}
 			</div>
 		</div>
 	</nav>  	<!--Fim do Menu-->
 
-	<main>
+	<main>	
 		<section class="jumbotron">		 <!--Inicio do Titulo-->
 			<form method="GET" class="input-group">
 				<input class="form-control" type="search" placeholder="Busque aqui" name="search">
 				<button class="btn-primary ml-1">Pesquisar</button>
 			</form>
 		</section> 		<!--Fim do Titulo-->
+			
 
 		<section class="container">
 
@@ -100,19 +137,33 @@
 	</main>
 	<footer class="mt-4 alert-primary fixed-bottom"> 		<!--Inicio do rodapé-->
 		<div class="container d-flex justify-content-between">
-			<span class="copy mt-4">
+			<span class="copy mt-4 text-primary">
 				<h4>Copyright ©2020</h4> 
 			</span>	
 
-			<ul class="navbar icones">
-				<li><a href="https://github.com/" class="text-hide">GitHub</a></li>
+			<ul class="navbar icones d-inline-block">
 
-				<li><a href="https://myaccount.google.com/" class="text-hide">Google Plus</a></li>
+				<li><a href="https://github.com/">
+					<img src="/static/icons/githubr.svg" class="mt-3" width="30" height="30" alt="">
+				</a></li>
 
-				<li><a href="https://br.linkedin.com/" class="text-hide">Linkedin</a></li>
+				<li><a href="https://myaccount.google.com/">
+					<img src="/static/icons/google-plus.svg" class="mt-3" width="30" height="30" alt="">
+				</a></li>
 
-				<li><a href="https://www.facebook.com/" class="text-hide">Facebook</a></li>
+				<li><a href="https://br.linkedin.com/">
+					<img src="/static/icons/linkedin.svg" class="mt-3" width="30" height="30" alt="">
+				</a></li>
+
+				<li><a href="https://www.facebook.com/">
+					<img src="/static/icons/facebookr.svg" class="mt-3" width="30" height="30" alt="">
+				</a></li>
+
+				<li><a href="https://www.twitter.com/">
+					<img src="/static/icons/twitterr.svg" class="mt-3" width="30" height="30" alt="">
+				</a></li>
 			</ul>
+
 		</div>
 		
 	</footer>		 <!--Fim do Rodapé-->
