@@ -29,12 +29,8 @@ button{
 	margin-left: 0.5rem;
 }
 
-/* .icones a[href='V:/psw/static/icons/github.svg']{
-	background-image: url('V:/psw/static/icons/github.svg');
-	background-size: 36px 36px;
-}
 
-.icones a[href='https://myaccount.google.com/']{
+/* .icones a[href='https://myaccount.google.com/']{
 	background-image: url('V:/psw/static/icons/google-plus.svg');
 	background-size: 36px 36px;
 }
@@ -47,8 +43,8 @@ button{
 .icones a[href='https://www.facebook.com/']{
 	background-image: url('V:/psw/static/icons/facebook.svg');
 	background-size: 36px 36px;
-} */
-
+} 
+ */
 .copy{
 	color: #FFFFFF;
 }
