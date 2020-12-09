@@ -1,8 +1,8 @@
-.jumbotron{
+/* .jumbotron{
 	background-image: url('/static/icons/hospaz.jpg');
 	background-size: cover;
 	background-position: center;
-}
+} */
 
 .navbar-light .navbar-nav .nav-link {
     color: #007bff;
@@ -53,11 +53,11 @@ button{
 	color: #FFFFFF;
 }
 
-.card-header{
+/* .card-header{
 	background-image: url('V:/Curso FIC/hospitalar/imghosp/hospaz.jpg');
 	background-size: cover;
 	background-position: center;
-}
+} */
 
 
 
