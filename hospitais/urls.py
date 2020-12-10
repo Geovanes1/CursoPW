@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hospapp.views import index, hospital 
+from hospapp.views import index 
 from django.conf.urls.static import static
 from django.conf.urls import url, include
 from django.views.static import serve
