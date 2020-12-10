@@ -1,1 +1,1 @@
-web: gunicorn hospapp.wsgi
+web: gunicorn psw.wsgi
