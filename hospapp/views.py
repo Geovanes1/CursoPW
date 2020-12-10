@@ -26,7 +26,7 @@ def editar(request, id):
 	form = Hospitalform(instance=hosp)
 
 	if(request.method == "POST"):
-		form = Hospitalform(request.POST,request.FILES, instance=hosp)
+		form = Hospitalform(request.POST, request.FILES, instance=hosp)
 
 		if form.is_valid():
 			forms = form.save(commit=False)
