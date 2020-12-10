@@ -29,26 +29,6 @@ button{
 	margin-left: 0.5rem;
 }
 
-.icones a[href='https://github.com/']{
-	background-image: url('V:/Curso FIC/hospitalar/img/github.png');
-	background-size: 36px 36px;
-}
-
-.icones a[href='https://myaccount.google.com/']{
-	background-image: url('V:/Curso FIC/hospitalar/img/gp.png');
-	background-size: 36px 36px;
-}
-
-.icones a[href='https://br.linkedin.com/']{
-	background-image: url('V:/Curso FIC/hospitalar/img/link.png');
-	background-size: 36px 36px;
-}
-
-.icones a[href='https://www.facebook.com/']{
-	background-image: url('V:/Curso FIC/hospitalar/img/face.png');
-	background-size: 36px 36px;
-}
-
 .copy{
 	color: #FFFFFF;
 }
