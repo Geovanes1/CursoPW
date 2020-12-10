@@ -1,1 +1,1 @@
-web: gunicorn psw.wsgi
+web: gunicorn hospitais.wsgi
