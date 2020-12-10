@@ -25,7 +25,7 @@ class Hospital (models.Model):
 			print("A url da foto é:", self.foto.url)
 			return self.foto.url
 		else:
-			return "/static/img/paisagem02.jpg"
+			return "/static/img/si.jpeg"
 
 
 	def __str__(self):

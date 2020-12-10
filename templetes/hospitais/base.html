@@ -4,9 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/static/css/bootstrap.css">
-	<link rel="stylesheet" href="/static/css/estilo.css">
-	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="/static/css/estilo.css">	
 	<title>Hospitalar</title>
+	<link rel="icon" href="/static/icons/hospital.svg"/>
+	<style>
+		.jumbotron{
+			background-image: url('/static/icons/hospaz.jpg');
+			background-size: cover;
+			background-position: center;
+		}
+	</style>
 </head>
 <body>
 	<!--Inicio do Menu-->
@@ -20,61 +28,145 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 				<ul class="navbar-nav ml-auto mr-auto">
-					<li><a href="#" class="nav-link">Home</a></li>
-					<li><a href="#" class="nav-link">Hospitais</a></li>
-					<li><a href="#" class="nav-link">Tipos de Hospitais</a></li>
+
+					<li><a href="{% url 'index' %}" class="nav-link"><i class="material-icons align-middle">account_balance</i>Home</a></li>
+
+					<li><a href="{% url 'hospitais' %}" class="nav-link"><i class="material-icons align-middle">camera_enhance</i>Hospitais</a></li>
+
+					<li><a href="{% url 'hospitais' %}" class="nav-link"><i class="material-icons align-middle">chrome_reader_mode</i>Tipos de Hospitais</a></li>
 
 					<!--Colocando um SubMenu-->
 
 					<li class="dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Gerenciar Hospitais</a>
-						<ul class="dropdown-menu">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="material-icons align-middle">dns</i>Gerenciar Hospitais</a>
+						<ul class="dropdown-menu bg-dark">
 							<li>
-								<a href="#" class="dropdown-item">Inserir Hospitais</a>
+								<a href="{% url 'criar_hospital' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-success">cached</i>Inserir Hospitais</a>
 							</li>
 							<div class="dropdown-divider"></div>
 							<li>
-								<a href="" class="dropdown-item">Editar Hospitais</a>
+								<a href="{% url 'hospitais' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-warning">cached</i>Editar Hospitais</a>
 							</li>
-							<div class="dropdown-divider"></div>
+							<div class="dropdown-divider"></div> 
 							<li>
-								<a href="" class="dropdown-item">Excluir Hospitais</a>							
+								<a href="{% url 'hospitais' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-danger">cached</i>Excluir Hospitais</a>							
 							</li>
 						</ul>
 					</li>
 
 					<!-- Finalizando o SubMenu -->
-
-					<li><a href="#" class="nav-link">Registro</a></li>
-					<li><a href="#" class="nav-link">Login</a></li>
 				</ul>
+
+				<!--Menu_Usuario-->
+				{% if user.is_authenticated %}
+
+				<ul class="navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="material-icons align-middle">assignment_ind</i>{{ user }}</a>
+						<ul class="dropdown-menu bg-dark">
+							<li>
+								<a href="{% url 'criar_usuario' %}" class="dropdown-item text-light"><i class="material-icons align-middle">assignment_ind</i>Criar Usuarios</a>
+							</li>
+							<!-- <div class="dropdown-divider"></div>
+							<li>
+								<a href="{% url 'login' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-success">assignment_ind</i>Logar</a>
+							</li> -->
+							<div class="dropdown-divider"></div>
+							<li>
+								<a href="{% url 'logout' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-danger">assignment_ind</i>Sair</a>							
+							</li>
+						</ul>
+					</li>
+
+					<!-- Finalizando o SubMenu -->
+				</ul>
+
+				{% endif %}
+
+
+
+
+				{% if not user.is_authenticated %}
+
+				<ul class="navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="material-icons align-middle">assignment_ind</i>Usuarios</a>
+						<ul class="dropdown-menu bg-dark">
+							<li>
+								<a href="{% url 'criar_usuario' %}" class="dropdown-item text-light"><i class="material-icons align-middle">assignment_ind</i>Criar Usuarios</a>
+							</li>
+							<div class="dropdown-divider"></div>
+							<li>
+								<a href="{% url 'login' %}" class="dropdown-item text-light"><i class="material-icons align-middle text-success">assignment_ind</i>Logar</a>
+							</li>
+							<!-- <div class="dropdown-divider"></div> -->
+							
+						</ul>
+					</li>
+
+					<!-- Finalizando o SubMenu -->
+				</ul>
+
+				{% endif %}
 			</div>
 		</div>
 	</nav>  	<!--Fim do Menu-->
 
-	<main>
+	<main>	
 		<section class="jumbotron">		 <!--Inicio do Titulo-->
-			<form class="input-group">
-				<input class="form-control" type="search" placeholder="Busque aqui">
+			<form method="GET" class="input-group">
+				<input class="form-control" type="search" placeholder="Busque aqui" name="search">
 				<button class="btn-primary ml-1">Pesquisar</button>
 			</form>
 		</section> 		<!--Fim do Titulo-->
+			
 
-		<section>
+		<section class="container">
 
-			<form action="." method="POST" enctype="multipart/form-data">
-				{% block content %}
-
-
+			
+			{% block content %}
 
 
-				{% endblock content %}
-				<input type="submit" value="Enviar">
-			</form>
+
+
+			{% endblock content %}
+
 			
 		</section>
 
 	</main>
+	<footer class="mt-4 alert-primary fixed-bottom"> 		<!--Inicio do rodapé-->
+		<div class="container d-flex justify-content-between">
+			<span class="copy mt-4 text-primary">
+				<h4>Copyright ©2020</h4> 
+			</span>	
+
+			<ul class="navbar icones">
+
+				<li><a href="https://github.com/">
+					<img src="/static/icons/githubr.svg" class="mt-3" width="30" height="30" alt="">
+				</a></li>
+
+				<!-- <li><a href="https://myaccount.google.com/">
+					<img src="/static/icons/googleplus.svg" class="mt-3" width="30" height="30" alt="">
+				</a></li> -->
+
+				<li><a href="https://br.linkedin.com/">
+					<img src="/static/icons/linkedin.svg" class="mt-3" width="30" height="30" alt="">
+				</a></li>
+
+				<li><a href="https://www.facebook.com/">
+					<img src="/static/icons/facebookr.svg" class="mt-3" width="30" height="30" alt="">
+				</a></li>
+
+				<li><a href="https://www.twitter.com/">
+					<img src="/static/icons/twitterr.svg" class="mt-3" width="30" height="30" alt="">
+				</a></li>
+			</ul>
+
+		</div>
+		
+	</footer>		 <!--Fim do Rodapé-->
 
 
 	<script src="https://code.jquery.com/jquery-3.5.1.js"integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="crossorigin="anonymous">	

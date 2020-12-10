@@ -17,18 +17,21 @@ from django.contrib import admin
 from django.urls import path
 from hospapp.views import index, hospital 
 from django.conf.urls.static import static
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.views.static import serve
 from django.conf import settings
+from django.views.generic.base import TemplateView
 from hospapp.views import index, hospitais, criar_hospital, editar, deletar
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  
-    path('index/', index),
+    path('admin/', admin.site.urls),
+    url(r'^$',TemplateView.as_view(template_name='hospitais/index.html'), name='index'),  
+    path('index/', index, name='index'),
     path('hospitais/', hospitais, name='hospitais'),
-    path('criar_hospital/', criar_hospital),
+    path('criar_hospital/', criar_hospital, name='criar_hospital'),
     path('editar/<int:id>', editar, name='editar'),
     path('deletar/<int:id>', deletar, name='deletar'),
+    path('', include('usuarios.urls')),
     url(r'^img/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}) 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

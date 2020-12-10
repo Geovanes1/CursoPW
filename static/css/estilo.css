@@ -1,10 +1,14 @@
 /* .jumbotron{
+<<<<<<< HEAD
 	background-image: url('V:/Curso FIC/hospitalar/imghosp/hospaz.jpg');
+=======
+	background-image: url('/static/icons/hospaz.jpg');
+>>>>>>> Dados
 	background-size: cover;
 	background-position: center;
-}
+} */
 
-.navbar-light .navbar-nav .nav-link {
+/* .navbar-light .navbar-nav .nav-link {
     color: #007bff;
 }
 
@@ -27,24 +31,22 @@ button{
 .icones li{
 	display: inline-block;
 	margin-left: 0.5rem;
+<<<<<<< HEAD
 }
 
 .copy{
+=======
+} */
+
+ 
+/* .copy{
+>>>>>>> Dados
 	color: #FFFFFF;
 }
 
 .avaliado{
 	color: #FFFFFF;
-}
-
-.card-header{
-	background-image: url('V:/Curso FIC/hospitalar/imghosp/hospaz.jpg');
-	background-size: cover;
-	background-position: center;
-}
-
-
-
+} */
 
 
 /*.nav-link{
