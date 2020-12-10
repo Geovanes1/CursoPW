@@ -29,9 +29,11 @@ def editar(request, id):
 		form = Hospitalform(request.POST,request.FILES, instance=hosp)
 
 		if form.is_valid():
-		   form.save()
-		   save()
-		   return redirect('hospitais')
+			forms = form.save(commit=False)
+			forms.save()
+			form=Hospitalform()
+	   
+			return redirect('hospitais')
 
 		else:
 

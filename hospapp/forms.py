@@ -7,3 +7,4 @@ class Hospitalform(forms.ModelForm):
 		"""docstring for meta"""
 		model = Hospital
 		fields = '__all__'
+		# fields = ['nome_hospital','foto','desc_hospital','tipo_hospital','conceito_hospital']

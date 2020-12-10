@@ -8,10 +8,10 @@
 	background-position: center;
 } */
 
-/* .navbar-light .navbar-nav .nav-link {
+ .navbar-light .navbar-nav .nav-link {
     color: #007bff;
 }
-
+/*
 button{
 	border-radius: 50px;
 }
@@ -20,7 +20,7 @@ button{
 	width: 46px;
 	height: 46px;
 }
-
+*/
 .icones a{
 	display: block;
 	width: 36px;
@@ -31,12 +31,19 @@ button{
 .icones li{
 	display: inline-block;
 	margin-left: 0.5rem;
-<<<<<<< HEAD
+
 }
 
-.copy{
-=======
-} */
+tr th,tr td{
+	padding-left: 25px;
+	text-align: left;
+	background: #f3f3f3;
+
+}
+
+/* .copy{
+
+}  */
 
  
 /* .copy{

@@ -3,14 +3,23 @@
 {% block content %}
 
 <div class="container pb-5">
+	<!-- <section class="jumbotron">		 
+		<form method="GET" class="input-group">
+			<input class="form-control" type="search" placeholder="Busque aqui" name="search">
+			<button class="btn-primary ml-1">Pesquisar</button>
+		</form>
+	</section>
+ -->
+
+	{% if hospitais|length != 0 %}
 	<table class="table-responsive-lg table-responsive-sm table-responsive-md pb-5 mb-5">
 		<thead>
-			<tr>
-				<th>Nome Hospital</th>
-				<th>Foto</th>
-				<th>Descrição</th>
-				<th>Tipo Hospital</th>
-				<th>Conceito Hospital</th>
+			<tr >
+				<th class="">Nome Hospital</th>
+				<th class="">Foto</th>
+				<th class="">Descrição</th>
+				<th class="">Tipo Hospital</th>
+				<th class="">Conceito Hospital</th>
 				{% if user.is_authenticated%}
 				<th>Editar</th>
 				<th>Excluir</th>
@@ -29,10 +38,15 @@
 				<td><a href="{% url 'editar' hospital.id %}" class="btn btn-warning">Editar</a></td>
 				<td><a href="{% url 'deletar' hospital.id %}" class="btn btn-danger">Excluir</a></td>
 				{% endif%}
-			</tr>
+			</tr>			
+			
 			{% endfor %}
+			
 		</tbody>
 	</table>
+	{% else %}
+	<h3>Ops! Nenhum hospital Cadastrado. Cadastre um Hospital.</h3>
+	{% endif%}
 </div>
 
 
